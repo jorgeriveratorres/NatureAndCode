@@ -31,42 +31,42 @@ class VerletNode {
 		noStroke();
 		push();
 		translate(this.pos.x, this.pos.y, this.pos.z);
-		cone(this.radius, this.height)
+		ellipsoid(this.radius, this.radius+15, this.radius+1);
 		pop();
 	}
 	
 	setStyle(radius, color){
 		this.color = color;
 		this.radius = radius;
-		this.height = height;
+		
 	}
 
 	boundsCollide(bounds) {
 		if (this.pos.x > bounds.x / 2 - this.radius) {
 			this.pos.x = bounds.x / 2 - this.radius;
-			this.pos.x -= 1;
+			this.pos.x -= 3;
 		}
 		else if (this.pos.x < -bounds.x / 2 + this.radius) {
 			this.pos.x = -bounds.x / 2 + this.radius;
-			this.pos.x += 1;
+			this.pos.x += 3;
 		}
 
 		if (this.pos.y > bounds.y / 2 - this.radius) {
 			this.pos.y = bounds.y / 2 - this.radius;
-			this.pos.y -= 1;
+			this.pos.y -= 3;
 		}
 		else if (this.pos.y < -bounds.y / 2 + this.radius) {
 			this.pos.y = -bounds.y / 2 + this.radius;
-			this.pos.y += 1;
+			this.pos.y += 3;
 		}
 
 		if (this.pos.z > bounds.z / 2 - this.radius) {
 			this.pos.z = bounds.z / 2 - this.radius;
-			this.pos.z -= 1;
+			this.pos.z -= 3;
 		}
 		else if (this.pos.z < -bounds.z / 2 + this.radius) {
 			this.pos.z = -bounds.z / 2 + this.radius;
-			this.pos.z += 1;
+			this.pos.z += 3;
 		}
 	}
 } // closes class

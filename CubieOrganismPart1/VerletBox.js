@@ -25,7 +25,6 @@ class VerletBox {
 
         // initialize styloe properties
         this.nodeRadius = 1;
-        this.nodeHeight = 0.5;
         this.nodeCol = color(150, 34, 150);
         this.stickCol = color(150, 150, 0);
 
@@ -99,7 +98,7 @@ class VerletBox {
         // verlet guts below
         this.nodes = [];
         for (let i = 0; i < this.vecs.length; i++) {
-            this.nodes[i] = new VerletNode(this.vecs[i], this.nodeRadius, this.nodeHeight, color(235, 235, 255));
+            this.nodes[i] = new VerletNode(this.vecs[i], this.nodeRadius, color(235, 235, 255));
         }
 
         this.sticks = [];
@@ -138,10 +137,9 @@ class VerletBox {
 
     }
 
-    setStyles(nodeRadius, nodeCol, nodeHeight, stickCol) {
+    setStyles(nodeRadius, nodeCol, stickCol) {
         this.nodeRadius = nodeRadius;
         this.nodeCol = nodeCol;
-        this.nodeHeight = nodeHeight;
         this.stickCol = stickCol;
 
         for (let i = 0; i < this.nodes.length; i++) {
