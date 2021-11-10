@@ -18,7 +18,7 @@ var drawCircle = false;
 
 function setup() {
   let canvas = createCanvas(600, 600);
-  canvas.parent("sketch");
+  
   
   gravity = createVector(0.1, 0.1);
   
@@ -44,7 +44,7 @@ function draw() {
   background(125);
     
   updateParticles();
-  for (let i = 0; i < STEPS; i++) {
+  for (let i = 0; i < 50; i++) {
     
     updateConstraints();
     constrainPoints();
@@ -187,7 +187,6 @@ function Constraint(p1, p2, l, pushing = true) {
 
 let flagWidth = 10;
 let flagHeight = 10;
-let flagSpacing = 16;
 let flagConstraintLength = 20;
 let flagAttachPoints = 9;
 
